@@ -42,7 +42,13 @@ public class UniqueStudentListTest {
     @Test
     public void contains_personWithSameIdentityFieldsInList_returnsTrue() {
         uniquePersonList.add(ALICE);
+        // same name
         Student editedAlice = new PersonBuilder(ALICE).withMatriculationNumber(VALID_MATRIC_BOB).withTags(VALID_TAG_HUSBAND)
+                .build();
+        assertTrue(uniquePersonList.contains(editedAlice));
+
+        // same matric number
+        editedAlice = new PersonBuilder(ALICE).withName(VALID_MATRIC_BOB).withTags(VALID_TAG_HUSBAND)
                 .build();
         assertTrue(uniquePersonList.contains(editedAlice));
     }
@@ -85,10 +91,21 @@ public class UniqueStudentListTest {
     @Test
     public void setPerson_editedPersonHasSameIdentity_success() {
         uniquePersonList.add(ALICE);
+        // same name
         Student editedAlice = new PersonBuilder(ALICE).withMatriculationNumber(VALID_MATRIC_BOB).withTags(VALID_TAG_HUSBAND)
                 .build();
         uniquePersonList.setPerson(ALICE, editedAlice);
         UniquePersonList expectedUniquePersonList = new UniquePersonList();
+        expectedUniquePersonList.add(editedAlice);
+        assertEquals(expectedUniquePersonList, uniquePersonList);
+
+        // same matric number
+        uniquePersonList.setPersons(new UniquePersonList());
+        uniquePersonList.add(ALICE);
+        editedAlice = new PersonBuilder(ALICE).withName(VALID_MATRIC_BOB).withTags(VALID_TAG_HUSBAND)
+                .build();
+        uniquePersonList.setPerson(ALICE, editedAlice);
+        expectedUniquePersonList = new UniquePersonList();
         expectedUniquePersonList.add(editedAlice);
         assertEquals(expectedUniquePersonList, uniquePersonList);
     }

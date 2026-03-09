@@ -62,7 +62,7 @@ public class Student {
     }
 
     /**
-     * Returns true if both persons have the same name.
+     * Returns true if both persons have the same name or same matriculation number.
      * This defines a weaker notion of equality between two persons.
      */
     public boolean isSamePerson(Student otherStudent) {
@@ -71,7 +71,8 @@ public class Student {
         }
 
         return otherStudent != null
-                && otherStudent.getName().equals(getName());
+                && (otherStudent.getName().equals(getName())
+                || otherStudent.getMatriculationNumber().equals(getMatriculationNumber()));
     }
 
     /**

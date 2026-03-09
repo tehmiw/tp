@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.coursepilot.testutil.Assert.assertThrows;
 import static seedu.coursepilot.testutil.TypicalPersons.ALICE;
+import static seedu.coursepilot.testutil.TypicalPersons.BOB;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -49,6 +50,16 @@ public class AddCommandTest {
         Student validStudent = new PersonBuilder().build();
         AddCommand addCommand = new AddCommand(validStudent);
         ModelStub modelStub = new ModelStubWithPerson(validStudent);
+
+        assertThrows(CommandException.class, AddCommand.MESSAGE_DUPLICATE_PERSON, () -> addCommand.execute(modelStub));
+    }
+
+    @Test
+    public void execute_duplicateMatricNumber_throwsCommandException() {
+        Student alice = new PersonBuilder(ALICE).build();
+        Student bobWithAliceMatric = new PersonBuilder(BOB).withMatriculationNumber(ALICE.getMatriculationNumber().matricNumber).build();
+        AddCommand addCommand = new AddCommand(bobWithAliceMatric);
+        ModelStub modelStub = new ModelStubWithPerson(alice);
 
         assertThrows(CommandException.class, AddCommand.MESSAGE_DUPLICATE_PERSON, () -> addCommand.execute(modelStub));
     }
