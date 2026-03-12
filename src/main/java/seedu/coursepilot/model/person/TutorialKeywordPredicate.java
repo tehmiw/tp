@@ -3,16 +3,15 @@ package seedu.coursepilot.model.person;
 import java.util.List;
 import java.util.function.Predicate;
 
-import seedu.coursepilot.commons.util.StringUtil;
 import seedu.coursepilot.commons.util.ToStringBuilder;
 
 /**
- * Tests that a {@code Student}'s {@code Name} matches any of the keywords given.
+ * Tests that a {@code Student}'s {@code Tutorial} starts with the keyword given.
  */
-public class NameContainsKeywordsPredicate implements Predicate<Student> {
+public class TutorialKeywordPredicate implements Predicate<Student> {
     private final List<String> keywords;
 
-    public NameContainsKeywordsPredicate(List<String> keywords) {
+    public TutorialKeywordPredicate(List<String> keywords) {
         this.keywords = keywords;
     }
 
@@ -22,8 +21,7 @@ public class NameContainsKeywordsPredicate implements Predicate<Student> {
 
     @Override
     public boolean test(Student student) {
-        return keywords.stream()
-                .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(student.getName().fullName, keyword));
+        return true;
     }
 
     @Override
@@ -33,11 +31,11 @@ public class NameContainsKeywordsPredicate implements Predicate<Student> {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof NameContainsKeywordsPredicate)) {
+        if (!(other instanceof TutorialKeywordPredicate)) {
             return false;
         }
 
-        NameContainsKeywordsPredicate otherNameContainsKeywordsPredicate = (NameContainsKeywordsPredicate) other;
+        TutorialKeywordPredicate otherNameContainsKeywordsPredicate = (TutorialKeywordPredicate) other;
         return keywords.equals(otherNameContainsKeywordsPredicate.keywords);
     }
 

@@ -10,6 +10,7 @@ import seedu.coursepilot.model.person.EmailContainsKeywordsPredicate;
 import seedu.coursepilot.model.person.MatricNumberStartsWithKeywordsPredicate;
 import seedu.coursepilot.model.person.NameContainsKeywordsPredicate;
 import seedu.coursepilot.model.person.PhoneStartsWithKeywordsPredicate;
+import seedu.coursepilot.model.person.TutorialKeywordPredicate;
 
 /**
  * Parses input arguments and creates a new FindCommand object
@@ -31,6 +32,8 @@ public class FindCommandParser implements Parser<FindCommand> {
         String[] nameKeywords = trimmedArgs.split("\\s+");
 
         switch (nameKeywords[0]) {
+        case "/tutorial":
+            return new FindCommand(new TutorialKeywordPredicate(Arrays.asList(nameKeywords)));
         case "/phone":
             return new FindCommand(new PhoneStartsWithKeywordsPredicate(Arrays.asList(nameKeywords)));
         case "/email":
