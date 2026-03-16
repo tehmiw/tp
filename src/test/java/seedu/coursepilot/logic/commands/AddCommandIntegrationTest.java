@@ -33,8 +33,8 @@ public class AddCommandIntegrationTest {
 
         Tutorial currentTutorial = new Tutorial("CS2103T-W13", "Wed", "1pm-2pm", 10);
         Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
-        expectedModel.addTutorial(tutorial);
-        expectedModel.setCurrentOperatingTutorial(tutorial);
+        expectedModel.addTutorial(currentTutorial);
+        expectedModel.setCurrentOperatingTutorial(currentTutorial);
         expectedModel.addPerson(validStudent);
 
         assertCommandSuccess(new AddCommand(validStudent), model,
@@ -48,8 +48,8 @@ public class AddCommandIntegrationTest {
 
         Tutorial currentTutorial = new Tutorial("CS2103T-W13", "Wed", "1pm-2pm", 10);
         Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
-        expectedModel.addTutorial(tutorial);
-        expectedModel.setCurrentOperatingTutorial(tutorial);
+        expectedModel.addTutorial(currentTutorial);
+        expectedModel.setCurrentOperatingTutorial(currentTutorial);
         expectedModel.addPerson(validStudent);
 
         assertCommandFailure(new AddCommand(validStudent), model,
