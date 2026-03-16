@@ -1,15 +1,15 @@
 package seedu.coursepilot.logic.parser;
 
 import static seedu.coursepilot.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.coursepilot.logic.parser.CliSyntax.PREFIX_CAPACITY;
+import static seedu.coursepilot.logic.parser.CliSyntax.PREFIX_DAY;
 import static seedu.coursepilot.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.coursepilot.logic.parser.CliSyntax.PREFIX_MATRICNUMBER;
 import static seedu.coursepilot.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.coursepilot.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.coursepilot.logic.parser.CliSyntax.PREFIX_TAG;
-import static seedu.coursepilot.logic.parser.CliSyntax.PREFIX_TUTORIALCODE;
-import static seedu.coursepilot.logic.parser.CliSyntax.PREFIX_DAY;
 import static seedu.coursepilot.logic.parser.CliSyntax.PREFIX_TIMESLOT;
-import static seedu.coursepilot.logic.parser.CliSyntax.PREFIX_CAPACITY;
+import static seedu.coursepilot.logic.parser.CliSyntax.PREFIX_TUTORIALCODE;
 
 import java.util.Set;
 import java.util.stream.Stream;

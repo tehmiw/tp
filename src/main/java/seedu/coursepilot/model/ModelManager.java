@@ -14,7 +14,6 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import seedu.coursepilot.commons.core.GuiSettings;
 import seedu.coursepilot.commons.core.LogsCenter;
-
 import seedu.coursepilot.model.person.Student;
 import seedu.coursepilot.model.tutorial.Tutorial;
 
