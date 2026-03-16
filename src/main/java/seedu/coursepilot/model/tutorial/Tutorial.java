@@ -78,13 +78,22 @@ public class Tutorial {
         requireNonNull(student);
         return students.stream().anyMatch(student::isSamePerson);
     }
-
+    /**
+     * Adds a student to the studentList belonging to this particular tutorial instance
+     *
+     * @param student the student to be added
+     */
     public void addStudent(Student student) {
         this.students.add(student);
     }
-
+    /**
+     * Returns true if both persons have the same tutorial code.
+     * This defines a weaker notion of equality between two tutorials.
+     */
     public boolean isSameTutorial(Tutorial other) {
-        if (other == this) return true;
+        if (other == this) {
+            return true;
+        }
         return other != null && this.tutorialCode.equals(other.tutorialCode);
     }
 

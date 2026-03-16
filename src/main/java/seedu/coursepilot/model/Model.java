@@ -9,7 +9,7 @@ import javafx.collections.ObservableList;
 import seedu.coursepilot.commons.core.GuiSettings;
 import seedu.coursepilot.model.person.Student;
 import seedu.coursepilot.model.tutorial.Tutorial;
-import javafx.beans.property.ObjectProperty;
+
 /**
  * The API of the Model component.
  */

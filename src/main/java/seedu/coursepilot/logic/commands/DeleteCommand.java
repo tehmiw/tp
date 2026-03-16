@@ -32,6 +32,9 @@ public class DeleteCommand extends Command {
     private final Index targetIndex;
     private String type;
 
+    /**
+     * Creates an DeleteCommand to delete the specified entry
+     */
     public DeleteCommand(Index targetIndex, String type) {
 
         this.targetIndex = targetIndex;

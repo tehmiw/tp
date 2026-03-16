@@ -1,15 +1,16 @@
 package seedu.coursepilot.logic.commands;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.coursepilot.logic.parser.CliSyntax.PREFIX_CAPACITY;
+import static seedu.coursepilot.logic.parser.CliSyntax.PREFIX_DAY;
 import static seedu.coursepilot.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.coursepilot.logic.parser.CliSyntax.PREFIX_MATRICNUMBER;
 import static seedu.coursepilot.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.coursepilot.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.coursepilot.logic.parser.CliSyntax.PREFIX_TAG;
-import static seedu.coursepilot.logic.parser.CliSyntax.PREFIX_TUTORIALCODE;
-import static seedu.coursepilot.logic.parser.CliSyntax.PREFIX_DAY;
 import static seedu.coursepilot.logic.parser.CliSyntax.PREFIX_TIMESLOT;
-import static seedu.coursepilot.logic.parser.CliSyntax.PREFIX_CAPACITY;
+import static seedu.coursepilot.logic.parser.CliSyntax.PREFIX_TUTORIALCODE;
+
 
 import seedu.coursepilot.commons.util.ToStringBuilder;
 import seedu.coursepilot.logic.Messages;
@@ -63,6 +64,9 @@ public class AddCommand extends Command {
     private final Student toAdd;
     private final Tutorial tutorialToAdd;
 
+    /**
+     * Specifies the target of the add command.
+     */
     public enum AddTarget {
         STUDENT,
         TUTORIAL
@@ -80,6 +84,9 @@ public class AddCommand extends Command {
         tutorialToAdd = null;
     }
 
+    /**
+     * Creates an AddCommand to add the specified {@code Tutorial}
+     */
     public AddCommand(Tutorial tutorial) {
         requireNonNull(tutorial);
         tutorialToAdd = tutorial;

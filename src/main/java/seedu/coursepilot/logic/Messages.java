@@ -49,6 +49,9 @@ public class Messages {
         student.getTags().forEach(builder::append);
         return builder.toString();
     }
+    /**
+     * Formats the {@code tutorial} for display to the user.
+     */
     public static String format(Tutorial tutorial) {
         final StringBuilder builder = new StringBuilder();
         builder.append("Tutorial Code: ").append(tutorial.getTutorialCode())

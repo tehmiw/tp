@@ -56,12 +56,16 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /**
-     * Resets the existing data of this {@code AddressBook} with {@code newData}.
+     * Replaces the contents of the tutorial list with {@code tutorials}.
+     * {@code tutorials} must not contain duplicate tutorials.
      */
     public void setTutorials(List<Tutorial> tutorials) {
         this.tutorials.setTutorials(tutorials);
     }
 
+    /**
+     * Resets the existing data of this {@code AddressBook} with {@code newData}.
+     */
     public void resetData(ReadOnlyAddressBook newData) {
         requireNonNull(newData);
 
@@ -79,6 +83,9 @@ public class AddressBook implements ReadOnlyAddressBook {
         return persons.contains(student);
     }
 
+    /**
+     * Returns true if a tutorial with the same identity as {@code tutorial} exists in the address book.
+     */
     public boolean hasTutorial(Tutorial tutorial) {
         requireNonNull(tutorial);
         return tutorials.contains(tutorial);

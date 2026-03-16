@@ -1,17 +1,15 @@
 package seedu.coursepilot.storage;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import seedu.coursepilot.commons.exceptions.IllegalValueException;
-import seedu.coursepilot.model.tutorial.Tutorial;
 import seedu.coursepilot.model.person.Student;
+import seedu.coursepilot.model.tutorial.Tutorial;
 
 /**
  * Jackson-friendly version of {@link Tutorial}.
